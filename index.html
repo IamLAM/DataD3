@@ -216,6 +216,27 @@
         d3.select("body")
             .append("h2")
             .text(output)
+            //
+            ////////////////////////////////////////////////
+        const padding = 30;
+
+        // Create an x and y scale
+
+        const xScale = d3.scaleLinear()
+            .domain([0, d3.max(dataset, (d) => d[0])])
+            .range([padding, w - padding]);
+
+        // Add your code below this line
+
+        const yScale = undefined;
+
+
+        // Add your code above this line
+
+        const output = yScale(411); // Returns 30
+        d3.select("body")
+            .append("h2")
+            .text(output)
     </script>
 
 
