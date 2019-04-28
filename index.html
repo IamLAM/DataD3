@@ -159,14 +159,14 @@
         const w2 = 500;
         const h2 = 500;
 
-        const svg = d3.select("body")
+        const svg2 = d3.select("body")
             .append("svg")
             .attr("width", w2)
             .attr("height", h2);
 
-        svg.selectAll("circle")
+        svg2.selectAll("circle")
             // Add your code below this line
-            .data(dataset)
+            .data(dataset2)
             .enter()
             .append("circle")
 
@@ -176,7 +176,16 @@
             })
             .attr("r", 5)
 
-        // Add your code above this line
+        svg2.selectAll("text")
+            .data(dataset2)
+            .enter()
+            .append("text")
+            .text((d) => {
+                return d[0] + ", " + d[1];
+            })
+            .attr("x", (d, i) => d[0] + 5)
+            .attr("y", (d, i) => h - d[1])
+            // Add your code above this line
     </script>
 
 
