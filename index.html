@@ -106,7 +106,9 @@
 
         // Add your code above this line
 
-        .attr("y", 0)
+        .attr("y", (d, i) => {
+                return h - 3 * d;
+            })
             .attr("width", 25)
             .attr("height", (d, i) => {
 
