@@ -26,6 +26,10 @@
         svg {
             background-color: rgb(255, 251, 192);
         }
+        
+        .bar:hover {
+            fill: brown;
+        }
     </style>
 
 </head>
@@ -101,7 +105,7 @@
                 return i * 30;
 
             })
-
+            .attr("class", "bar")
 
 
         // Add your code above this line
