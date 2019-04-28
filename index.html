@@ -190,6 +190,9 @@
         ///////
 
         const scale = d3.scaleLinear(); // Create the scale here
+
+        scale.domain([250, 500])
+        scale.range([10, 150])
         const output = scale(50); // Call the scale with an argument here
 
 
