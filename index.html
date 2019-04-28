@@ -22,6 +22,10 @@
             display: inline-block;
             background-color: rgb(0, 255, 179);
         }
+        
+        svg {
+            background-color: rgb(255, 251, 192);
+        }
     </style>
 
 </head>
@@ -56,6 +60,21 @@
             .append("div")
             .attr("class", "chart")
             .style("height", (d) => 10 * d + "px")
+
+        //svg
+
+
+        const w = 500;
+        const h = 100;
+
+        const svg = d3.select("body")
+
+        .data(dataset)
+            .enter()
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h)
+            .attr("class", "svg")
     </script>
 
 
