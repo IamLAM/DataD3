@@ -14,6 +14,14 @@
             display: inline-block;
             background-color: rgb(255, 208, 0);
         }
+        
+        .chart {
+            width: 30px;
+            height: 100px;
+            margin: 2px;
+            display: inline-block;
+            background-color: rgb(0, 255, 179);
+        }
     </style>
 
 </head>
@@ -38,7 +46,18 @@
         });
 
         d3.select("body").selectAll("h5").data(dataset).enter().append("h5").text((dataset) => dataset).attr("class", "bar")
+            //d3.select("body").selectAll("div").data(dataset).enter().append("div").text((dataset) => dataset).attr("class", "chart")
+            // .style("height", (d) => d)
+
+
+        d3.select("body").selectAll("div")
+            .data(dataset)
+            .enter()
+            .append("div")
+            .attr("class", "chart")
+            .style("height", (d) => 10 * d + "px")
     </script>
+
 
     <ul>
         <li>Example</li>
