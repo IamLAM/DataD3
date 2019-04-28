@@ -19,6 +19,14 @@
         d3.select("body").selectAll("h3").data(dataset).enter().append("h3").text("Item")
             //printing a dinamic data
         d3.select("body").selectAll("h2").data(dataset).enter().append("h2").text((dataset) => dataset).style("color", "blue")
+
+        d3.select("body").selectAll("h4").data(dataset).enter().append("h4").text((dataset) => dataset).style("color", (d) => {
+
+            if (d < 20)
+                return "red";
+            else
+                return "blue";
+        });
     </script>
 
     <ul>
