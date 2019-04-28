@@ -170,7 +170,11 @@
             .enter()
             .append("circle")
 
-
+        .attr("cx", (d) => d[0])
+            .attr("cy", (d, i) => {
+                return h - d[1];
+            })
+            .attr("r", 5)
 
         // Add your code above this line
     </script>
