@@ -75,16 +75,33 @@
         */
         //
 
+        /*  const svg = d3.select("body")
+              .append("svg")
+              .attr("width", w)
+              .attr("height", h)
+              .append("rect")
+              .attr("x", 0)
+              .attr("y", 0)
+              .attr("width", w)
+              .attr("height", h)
+              */
+
         const svg = d3.select("body")
             .append("svg")
             .attr("width", w)
             .attr("height", h)
+
+        svg.selectAll("rect")
             // Add your code below this line
+            .data(dataset)
+            .enter()
             .append("rect")
+            .attr("class", "chart")
+            // Add your code above this line
             .attr("x", 0)
             .attr("y", 0)
-            .attr("width", w)
-            .attr("height", h)
+            .attr("width", 25)
+            .attr("height", 100);
     </script>
 
 
