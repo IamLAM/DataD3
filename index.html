@@ -12,8 +12,11 @@
 
 <body>
     <script>
+        const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
         d3.select("body").append("h1").text("Every little thing is gonna be all right");
         d3.selectAll("li").text("Hi");
+        d3.select("body").selectAll("h2").data(dataset).enter().append("h2").text("Item")
     </script>
 
     <ul>
