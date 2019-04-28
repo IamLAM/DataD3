@@ -218,29 +218,46 @@
             .text(output)
             //
             ////////////////////////////////////////////////
-        const padding = 30;
+        const padding = 60;
 
         // Create an x and y scale
 
         const xScale = d3.scaleLinear()
-            .domain([0, d3.max(dataset, (d) => d[0])])
+            .domain([0, d3.max(dataset2, (d) => d[0])])
             .range([padding, w - padding]);
 
         // Add your code below this line
 
         const yScale = d3.scaleLinear()
-            .domain([0, d3.max(dataset, (d) => d[1])])
+            .domain([0, d3.max(dataset2, (d) => d[1])])
             .range([h - padding, padding])
 
 
+        const svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
 
+        svg.selectAll("circle")
+            .data(dataset)
+            .enter()
+            .append("circle")
+            // Add your code below this line
+            .attr("cx", (d) => xScale(d[0] + 5))
+            .attr("cy", (d) => yScale(d[1] + 5))
+            .attr("r", 5)
 
         // Add your code above this line
 
-        const output = yScale(411); // Returns 30
-        d3.select("body")
-            .append("h2")
-            .text(output)
+        svg.selectAll("text")
+            .data(dataset2)
+            .enter()
+            .append("text")
+            .text((d) => (d[0] + ", " +
+                d[1]))
+            // Add your code below this line
+            .attr("x", (d) => xScale(d[0] + 10))
+            .attr("y", (d) => yScale(d[1]))
     </script>
 
 
