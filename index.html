@@ -106,9 +106,10 @@
 
             })
             .attr("class", "bar")
+            .append("title")
+            .text((d) => d)
 
 
-        // Add your code above this line
 
         .attr("y", (d, i) => {
                 return h - 3 * d;
