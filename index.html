@@ -115,6 +115,19 @@
                 return d * 3;
             })
             .attr("fill", "navy")
+
+        svg.selectAll("text")
+            .data(dataset)
+            .enter()
+            // Add your code below this line
+            .append("text")
+            .text((d) => d)
+            .attr("x", (d, i) => {
+                return i * 30;
+            })
+            .attr("y", (d, i) => {
+                return h - 3 * d - 3;
+            })
     </script>
 
 
