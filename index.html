@@ -16,7 +16,9 @@
 
         d3.select("body").append("h1").text("Every little thing is gonna be all right");
         d3.selectAll("li").text("Hi");
-        d3.select("body").selectAll("h2").data(dataset).enter().append("h2").text("Item")
+        d3.select("body").selectAll("h3").data(dataset).enter().append("h3").text("Item")
+            //printing a dinamic data
+        d3.select("body").selectAll("h2").data(dataset).enter().append("h2").text((dataset) => dataset)
     </script>
 
     <ul>
